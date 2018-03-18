@@ -3,25 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Git 配置及相关命令 | 个人博客</title>
+    <title>代码规范 | 个人博客</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="git" />
+        <meta name="keywords" content="规范" />
     
-    <meta name="description" content="从git安装到电脑后的配置步骤,及一下git常用命令">
-<meta name="keywords" content="git">
+    <meta name="description" content="js相关规范">
+<meta name="keywords" content="规范">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git 配置及相关命令">
-<meta property="og:url" content="http://yoursite.com/2018/02/01/第一篇博客/index.html">
+<meta property="og:title" content="代码规范">
+<meta property="og:url" content="http://yoursite.com/2018/03/17/规范/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="从git安装到电脑后的配置步骤,及一下git常用命令">
+<meta property="og:description" content="js相关规范">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/2月/1.jpg">
-<meta property="og:updated_time" content="2018-03-09T08:18:58.764Z">
+<meta property="og:updated_time" content="2018-03-17T11:45:45.464Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git 配置及相关命令">
-<meta name="twitter:description" content="从git安装到电脑后的配置步骤,及一下git常用命令">
+<meta name="twitter:title" content="代码规范">
+<meta name="twitter:description" content="js相关规范">
 <meta name="twitter:image" content="http://yoursite.com/images/2月/1.jpg">
     
 
@@ -139,14 +139,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-第一篇博客" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-规范" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Git 配置及相关命令
+        代码规范
         </h1>
     
 
@@ -156,49 +156,32 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/02/01/第一篇博客/" class="article-date">
-            <time datetime="2018-02-01T01:10:13.000Z" itemprop="datePublished">2018-02-01</time>
+        <a href="/2018/03/17/规范/" class="article-date">
+            <time datetime="2018-03-17T11:42:49.551Z" itemprop="datePublished">2018-03-17</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/git/">git</a>
+        <a class="tag-link" href="/tags/规范/">规范</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <pre><code>从git安装到电脑后的配置步骤,及一下git常用命令
+            <pre><code>js相关规范
 </code></pre><a id="more"></a>
 <p><img src="/images/2月/1.jpg" alt=""></p>
-<h2 id="开始配置"><a href="#开始配置" class="headerlink" title="开始配置"></a>开始配置</h2><h3 id="一、生成SSH密钥过程："><a href="#一、生成SSH密钥过程：" class="headerlink" title="一、生成SSH密钥过程："></a>一、生成SSH密钥过程：</h3><p>1.查看是否已经有了ssh密钥：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh   //在gitbash中运行 </span><br><span class="line">或者直接进入 C:\Users\wj\.ssh 目录查看</span><br></pre></td></tr></table></figure>
-<p>如果没有密钥则不会有此文件夹，有则备份删除</p>
-<p>2.生成密钥：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C “****@189.cn”   //按3次回车，密码为空</span><br></pre></td></tr></table></figure></p>
-<p>Your identification has been saved in /home/tekkub/.ssh/id_rsa.<br>Your public key has been saved in /home/tekkub/.ssh/id_rsa.pub.<br>The key fingerprint is:<br>………………<br>最后得到了两个文件：id_rsa和id_rsa.pub</p>
-<p>3.添加密钥到ssh：ssh-add 文件名<br>需要之前输入密码。<br>把专用密钥添加到 ssh-agent 的高速缓存中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-add ~/.ssh/id_dsa</span><br></pre></td></tr></table></figure></p>
-<p>如果在使用shh-add的时候提示：<br>Could not open a connection to your authentication agent.<br>则需手动开启ssh，如下；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eval `ssh-agent -s`</span><br></pre></td></tr></table></figure></p>
-<p>再次执行ssh-add即可</p>
-<p>4.在github上添加ssh密钥，这要添加的是“id_rsa.pub”里面的公钥。<br>打开<a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a> ，登陆github账号，然后添加ssh。</p>
-<p>5.测试：ssh <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a><br>The authenticity of host ‘github.com (207.97.227.239)’ can’t be established.<br>RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.<br>Are you sure you want to continue connecting (yes/no)? yes<br>Warning: Permanently added ‘github.com,207.97.227.239′ (RSA) to the list of known hosts.<br>ERROR: Hi tekkub! You’ve successfully authenticated, but GitHub does not provide shell access<br>Connection to github.com closed.</p>
-<p>6.加快clone的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">151.101.72.249 http://global-ssl.fastly.Net 192.30.253.112 http://github.com    //添加的hostsC:\Windows\System32\drivers\etc\hosts</span><br></pre></td></tr></table></figure></p>
-<h3 id="二：git命令"><a href="#二：git命令" class="headerlink" title="二：git命令"></a>二：git命令</h3><p>Workspace：工作区<br>Index / Stage：暂存区<br>Repository：仓库区（或本地仓库）<br>Remote：远程仓库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">touch readme.txt    //创建.txt文件（任意文件后缀）</span><br><span class="line">mkdir text          //创建 text文件夹</span><br><span class="line"></span><br><span class="line">cd ..               //退出当前文件夹</span><br><span class="line">cd ./               //当前目录</span><br><span class="line">cd /                //退出到跟目录</span><br></pre></td></tr></table></figure>
-<p>Git的设置文件为.gitconfig 具体怎么配置？<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --list           //显示当前的Git配置</span><br><span class="line">git config -e --global      //编辑Git配置文件</span><br><span class="line"> </span><br><span class="line">git config --global user.name &quot;[name]&quot;   //设置提交代码时的用户信息</span><br><span class="line">git config --global user.email &quot;[email address]&quot; //设置提交代码时的用户信息</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">pwd                 //显示当前目录</span><br><span class="line">ls                  //查看有什么文件</span><br><span class="line">如果你没有看到.git目录，那是因为这个目录默认是隐藏的，用ls -ah命令就可以看见</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">初始化仓库</span><br><span class="line">git init  </span><br><span class="line">git init 项目名（创建后里面有.git文件）</span><br><span class="line"></span><br><span class="line">git add .    //添加所有文件到暂存区</span><br><span class="line">git add      // 添加指定文件到暂存区</span><br><span class="line"></span><br><span class="line">git commit -m &quot;文件说明&quot;   提交到版本库中(本地仓库)</span><br><span class="line">git commit -v  //提交时显示所有diff信息</span><br><span class="line">git commit --amend -m [message]  //使用一次新的commit，替代上一次提交</span><br><span class="line">如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git remote add origin &quot;具体github仓库&quot;  //需要提前在git上创建好</span><br><span class="line"></span><br><span class="line">git push -u origin master    //本地仓库把推送到远程仓库</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b dev //新建并切换到dev分支</span><br><span class="line"></span><br><span class="line">等价于：</span><br><span class="line"></span><br><span class="line">git branch dev   //新建分支</span><br><span class="line">git checkout dev //切换分支</span><br><span class="line">git checkout -   //切换到上一个分支</span><br><span class="line"></span><br><span class="line">git branch       //查看分支：</span><br><span class="line">git branch -r    //查看远程分支</span><br><span class="line">git branch -a    //列出所有本地分支和远程分支</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git merge dev    //将次分支合并到当前分支上面</span><br><span class="line">git branch -d dev //删除分支</span><br><span class="line"></span><br><span class="line">删除远程分支</span><br><span class="line">git push origin --delete [branch-name]</span><br><span class="line">git branch -dr [remote/branch]</span><br><span class="line"></span><br><span class="line">git clone &quot;***&quot;       //不指定分支拉代码</span><br><span class="line">git clone -b dev &quot;***&quot; //指定分支拉代码</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log    //显示提交记录  可加参数   --pretty=oneline</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status   //显示有变更的文件</span><br><span class="line">git diff     //显示暂存区和工作区的差异</span><br><span class="line">git diff --cached [file]  //显示暂存区和上一个commit的差异</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *  这里的注释内容【会】被压缩工具压缩</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*!</span><br><span class="line"> * 这里的注释内容【不会】被压缩工具压缩</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @auhor       作者</span><br><span class="line"> * @version     版本号</span><br><span class="line"> * @param       参数</span><br><span class="line"> * @example     示例</span><br><span class="line"> * @link        链接</span><br><span class="line"> * @namespace   命名空间</span><br><span class="line"> * @requires    依赖模块</span><br><span class="line"> * @return      返回值</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * @param &#123;String&#125; 参数描述</span><br><span class="line"> * @param &#123;Number&#125; 参数描述</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/*!</span><br><span class="line"> * [testFunction description]</span><br><span class="line"> * @param  &#123;[type]&#125; a [description]</span><br><span class="line"> * @param  &#123;[type]&#125; b [description]</span><br><span class="line"> * @param  &#123;[type]&#125; c [description]</span><br><span class="line"> * @return &#123;[type]&#125;   [description]</span><br><span class="line"> */</span><br><span class="line">function testFunction(a, b, c) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// TODO 未处理IE6-8的兼容性</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * [setOpacity description]</span><br><span class="line"> * @param &#123;[string]&#125; node [父节点类型]</span><br><span class="line"> * @param &#123;&#125; val  [description]</span><br><span class="line"> */</span><br><span class="line">function setOpacity(node, val) &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * [numData description]</span><br><span class="line"> * @type &#123;Number&#125;</span><br><span class="line"> */</span><br><span class="line">var numData = 1;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * </span><br><span class="line"> */</span><br><span class="line">@auhor 作者</span><br><span class="line">@param 参数</span><br><span class="line">@example 示例</span><br><span class="line">@link 链接</span><br><span class="line">@namespace 命名空间</span><br><span class="line">@requires 依赖模块</span><br><span class="line">@return 返回值</span><br><span class="line">@version 版本号</span><br></pre></td></tr></table></figure>
         </div>
         <footer class="article-footer">
             
 
 
 
-    <a data-url="http://yoursite.com/2018/02/01/第一篇博客/" data-id="cjejmahxq0000psuv4s828s37" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/03/17/规范/" data-id="cjevb20ys0000h8uv9wbkxn4m" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -335,20 +318,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/03/14/js宽高设置/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            网页宽高设置
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2018/02/01/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/03/14/js宽高设置/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">测试页</p>
+        <p class="article-nav-title">网页宽高设置</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -524,7 +497,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'http://yoursite.com/2018/02/01/第一篇博客/';
+    var disqus_url = 'http://yoursite.com/2018/03/17/规范/';
     
     (function() {
     var dsq = document.createElement('script');
