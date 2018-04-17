@@ -18,7 +18,7 @@
 <meta property="og:description" content="es6相关笔记整理">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/2月/1.jpg">
-<meta property="og:updated_time" content="2018-04-04T02:36:49.758Z">
+<meta property="og:updated_time" content="2018-04-14T08:00:43.773Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Es6相关笔记">
 <meta name="twitter:description" content="es6相关笔记整理">
@@ -174,9 +174,12 @@
             <pre><code>es6相关笔记整理
 </code></pre><a id="more"></a>
 <p><img src="/images/2月/1.jpg" alt=""></p>
-<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>上面代码中，变量i是let声明的，当前的i只在本轮循环有效，所以每一次循环的i其实都是一个新的变量，所以最后输出的是6。你可能会问，如果每一轮循环的变量i都是重新声明的，那它怎么知道上一轮循环的值，从而计算出本轮循环的值？这是因为 JavaScript 引擎内部会记住上一轮循环的值，初始化本轮的变量i时，就在上一轮循环的基础上进行计算。</p>
+<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>1.<br>let声明的变量在每一次循环中都是一个新的变量，javascript引擎会记作上一轮循环的值。</p>
 <p>另外，for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
 <p>上面代码中，变量foo用var命令声明，会发生变量提升，即脚本开始运行时，变量foo已经存在了，但是没有值，所以会输出undefined。变量bar用let命令声明，不会发生变量提升。这表示在声明它之前，变量bar是不存在的，这时如果用到它，就会抛出一个错误。</p>
+<p>2.<br>另外，for循环还有一个特别之处，就是设置循环变量的那部分是一个父作用域，而循环体内部是一个单独的子作用域。</p>
+<p>for (let i = 0; i &lt; 3; i++) {<br>  let i = ‘abc’;<br>  console.log(i);<br>}<br>// abc<br>// abc<br>// abc</p>
+<p>解释：其实块级作用域里声明的let 变量不可以在块级外使用，并不是说外面的let变量不能跑到块级作用域中用，上面的父级let在子级没有什么自己的let时，用的是父级的变量，如果声明了则用自己作用域的。</p>
 
         </div>
         <footer class="article-footer">
@@ -184,7 +187,7 @@
 
 
 
-    <a data-url="http://yoursite.com/2018/04/04/Es6/" data-id="cjfkhesbs0000isuvbzzr7rmu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://yoursite.com/2018/04/04/Es6/" data-id="cjfz18j5v000050uv8qfjq04a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
