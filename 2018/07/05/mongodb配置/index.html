@@ -18,7 +18,7 @@
 <meta property="og:description" content="mongodb详细配置">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/2月/1.jpg">
-<meta property="og:updated_time" content="2018-07-05T14:09:58.106Z">
+<meta property="og:updated_time" content="2018-07-05T14:11:56.757Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mongodb配置">
 <meta name="twitter:description" content="mongodb详细配置">
@@ -176,9 +176,8 @@
 <p><img src="/images/2月/1.jpg" alt=""></p>
 <h2 id="1-启动MongoDB服务-data-db这两个文件夹要自己新建"><a href="#1-启动MongoDB服务-data-db这两个文件夹要自己新建" class="headerlink" title="1.启动MongoDB服务   \data\db这两个文件夹要自己新建"></a>1.启动MongoDB服务   \data\db这两个文件夹要自己新建</h2><p>mongod –dbpath E:\MongoDB\data\db</p>
 <p><a href="http://localhost:27017" target="_blank" rel="noopener">http://localhost:27017</a> 完了试试可不可以访问</p>
-<h2 id="2-本地windows-mongodb-服务配置"><a href="#2-本地windows-mongodb-服务配置" class="headerlink" title="2.本地windows mongodb 服务配置"></a>2.本地windows mongodb 服务配置</h2><p>###2.1 先在data文件下创建一个新文件夹log，然后Mongodb新建配置文件mongo.config</p>
-<p>dbpath=E:\MongoDB\data\db #数据库路径<br>logpath=E:\MongoDB\data\log\mongodb.log #日志输出文件路径<br>logappend=true #错误日志采用追加模式，配置这个选项后mongodb的日志会追加到现有的日志文件，而不是从新创建一个新文件<br>journal=true #启用日志文件，默认启用<br>quiet=true #这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false<br>port=27017 #端口号 默认为27017</p>
-<p>##2.2 用管理员身份打开cmd: 在环境的bin目录下运行<br>mongod.exe –logpath E:\MongoDB\logs\mongodb.log –logappend –dbpath E:\MongoDB\data –directoryperdb –serviceName MongoDB –install</p>
+<h2 id="2-本地windows-mongodb-服务配置"><a href="#2-本地windows-mongodb-服务配置" class="headerlink" title="2.本地windows mongodb 服务配置"></a>2.本地windows mongodb 服务配置</h2><h3 id="2-1-先在data文件下创建一个新文件夹log，然后Mongodb新建配置文件mongo-config"><a href="#2-1-先在data文件下创建一个新文件夹log，然后Mongodb新建配置文件mongo-config" class="headerlink" title="2.1 先在data文件下创建一个新文件夹log，然后Mongodb新建配置文件mongo.config"></a>2.1 先在data文件下创建一个新文件夹log，然后Mongodb新建配置文件mongo.config</h3><p>dbpath=E:\MongoDB\data\db #数据库路径<br>logpath=E:\MongoDB\data\log\mongodb.log #日志输出文件路径<br>logappend=true #错误日志采用追加模式，配置这个选项后mongodb的日志会追加到现有的日志文件，而不是从新创建一个新文件<br>journal=true #启用日志文件，默认启用<br>quiet=true #这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false<br>port=27017 #端口号 默认为27017</p>
+<h3 id="2-2-用管理员身份打开cmd-在环境的bin目录下运行"><a href="#2-2-用管理员身份打开cmd-在环境的bin目录下运行" class="headerlink" title="2.2 用管理员身份打开cmd: 在环境的bin目录下运行"></a>2.2 用管理员身份打开cmd: 在环境的bin目录下运行</h3><p>mongod.exe –logpath E:\MongoDB\logs\mongodb.log –logappend –dbpath E:\MongoDB\data –directoryperdb –serviceName MongoDB –install</p>
 <p>如果注册表因为之前没安装了没装成功的话，运行net start MongoDB 可以会报错， 可以先 运行 sc delete MongoDB 然后再执行2.2</p>
 
         </div>
