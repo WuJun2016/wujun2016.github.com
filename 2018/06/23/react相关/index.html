@@ -18,7 +18,7 @@
 <meta property="og:description" content="react相关笔记整理">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://yoursite.com/images/2月/1.jpg">
-<meta property="og:updated_time" content="2018-07-03T15:26:58.520Z">
+<meta property="og:updated_time" content="2018-07-04T07:00:08.679Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react">
 <meta name="twitter:description" content="react相关笔记整理">
@@ -197,6 +197,14 @@ window.devToolsExtension ? window.devToolsExtension():f=&gt;f
 <p>没使用修饰器时:<br>const setProps = (state)=&gt;{<br>    return { num:state }<br>}<br>const actionCreators = { addGun, removeGun ,addGunAsync };<br>App = connect(setProps,actionCreators)(App)</p>
 <p>使用修饰器时:<br>要先安装 npm isntall babel-plugin-transform-decorators-legacy –save-dev<br>并且在package.json的babel中配置,<br>“plugins”:[“transform-decorators-legacy”]</p>
 <p>因为creat-react-app脚手架不支持修饰器所以还要装<br>npm install babel-preset-stage-2 –save-dev<br>npm install babel-preset-react-native-stage-0 –save-dev<br>并且在根目录下创建.babelrc<br>// react<br>{<br>  “presets”: [“react-native-stage-0/decorator-support”]<br>}<br>不用配置”plugins”:[“transform-decorators-legacy”]</p>
+<h2 id="第二节-react-router4"><a href="#第二节-react-router4" class="headerlink" title="第二节 react-router4"></a>第二节 react-router4</h2><p>npm install react-router-dom –save</p>
+<p>核心方法<br>import { BrowserRouter, Link, Route, Redirect, Switch } from ‘react-router-dom’</p>
+<p>BrowserRouter 包裹了整个路由 (还用一个叫HashRouter)<br>Route 路由对应要渲染的组件,可以嵌套使用<br>Link  跳转专用,相当于a标签</p>
+<browserrouter><br>    <div><br>        <link to="/">App // 点击跳转到指定路由<br>        <link to="/one">one<br>        <link to="/two">two<br>        <route path="/" exact="" component="{App}/"> // 该指定路由渲染的组件<br>        <route path="/One" component="{One}/"><br>        <route path="/Two" component="{Two}/"><br>    </route></route></route></div><br></browserrouter> 
+
+<p>// BrowserRouter下只能有一个子元素<br>// exact精准匹配</p>
+<p>url 路由路径参数传递到模板 用baseUrl/:id类似格式，组件中用match.params.id接收。<br>Redirect组件是跳转用的  <redirect to="/test"><br>Switch 只选择一个子Route组件</redirect></p>
+<h2 id="第三节-react基础"><a href="#第三节-react基础" class="headerlink" title="第三节 react基础"></a>第三节 react基础</h2><p>1.组件周期<br>初始化周期: componentWillMount() render() componentDidMount()<br>组件重新渲染周期:<br>组件卸载声明周期:</p>
 
         </div>
         <footer class="article-footer">
@@ -341,6 +349,16 @@ window.devToolsExtension ? window.devToolsExtension():f=&gt;f
         
 <nav id="article-nav">
     
+        <a href="/2018/07/05/mongodb配置/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            mongodb配置
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2018/05/28/课程笔记/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
@@ -359,6 +377,26 @@ window.devToolsExtension ? window.devToolsExtension():f=&gt;f
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/07/05/mongodb配置/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/2月/1.jpg)" alt="mongodb配置" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/07/05/mongodb配置/" class="title">mongodb配置</a></p>
+                            <p class="item-date"><time datetime="2018-07-05T14:05:51.914Z" itemprop="datePublished">2018-07-05</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -440,26 +478,6 @@ window.devToolsExtension ? window.devToolsExtension():f=&gt;f
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/17/js注释规范/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/2月/1.jpg)" alt="代码规范" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/03/17/js注释规范/" class="title">代码规范</a></p>
-                            <p class="item-date"><time datetime="2018-03-17T11:42:49.551Z" itemprop="datePublished">2018-03-17</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -472,7 +490,7 @@ window.devToolsExtension ? window.devToolsExtension():f=&gt;f
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">二月 2018</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -482,7 +500,7 @@ window.devToolsExtension ? window.devToolsExtension():f=&gt;f
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/规范/">规范</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/es6/">es6</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/js/">js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/笔记/">笔记</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/规范/">规范</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -492,7 +510,7 @@ window.devToolsExtension ? window.devToolsExtension():f=&gt;f
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a>
+            <a href="/tags/es6/" style="font-size: 10px;">es6</a> <a href="/tags/git/" style="font-size: 20px;">git</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/笔记/" style="font-size: 10px;">笔记</a> <a href="/tags/规范/" style="font-size: 10px;">规范</a>
         </div>
     </div>
 

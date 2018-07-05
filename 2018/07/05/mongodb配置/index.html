@@ -3,20 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>标签：: javascript | 个人博客</title>
+    <title>mongodb配置 | 个人博客</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="吴俊个人博客_web相关开发_javascript基础_css效果">
-<meta property="og:type" content="website">
-<meta property="og:title" content="个人博客">
-<meta property="og:url" content="http://yoursite.com/tags/javascript/index.html">
+        <meta name="keywords" content="工具" />
+    
+    <meta name="description" content="mongodb详细配置">
+<meta name="keywords" content="工具">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb配置">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/mongodb配置/index.html">
 <meta property="og:site_name" content="个人博客">
-<meta property="og:description" content="吴俊个人博客_web相关开发_javascript基础_css效果">
+<meta property="og:description" content="mongodb详细配置">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/2月/1.jpg">
+<meta property="og:updated_time" content="2018-07-05T14:09:58.106Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="个人博客">
-<meta name="twitter:description" content="吴俊个人博客_web相关开发_javascript基础_css效果">
+<meta name="twitter:title" content="mongodb配置">
+<meta name="twitter:description" content="mongodb详细配置">
+<meta name="twitter:image" content="http://yoursite.com/images/2月/1.jpg">
     
 
     
@@ -129,74 +135,131 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-tag"></i>标签：: <em>javascript</em>
+    未分类
     </h1>
 </div>
                         <div class="main-body-content">
-                            
-
-    
-    
+                            <article id="post-mongodb配置" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/03/18/javascript常见函数/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2018/03/18/javascript常见函数/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2018-03-18T05:59:54.530Z" itemprop="datePublished">2018-03-18</time></div>
-        </div>
-        
+            <header class="article-header">
+                
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/03/18/javascript常见函数/">javascript常见函数</a>
+        mongodb配置
         </h1>
     
 
-        <p class="article-excerpt">
-            javascript常见函数封装
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/07/05/mongodb配置/" class="article-date">
+            <time datetime="2018-07-05T14:05:51.914Z" itemprop="datePublished">2018-07-05</time>
+        </a>
+    </div>
 
-        </p>
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/工具/">工具</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <pre><code>mongodb详细配置
+</code></pre><a id="more"></a>
+<p><img src="/images/2月/1.jpg" alt=""></p>
+<h2 id="1-启动MongoDB服务-data-db这两个文件夹要自己新建"><a href="#1-启动MongoDB服务-data-db这两个文件夹要自己新建" class="headerlink" title="1.启动MongoDB服务   \data\db这两个文件夹要自己新建"></a>1.启动MongoDB服务   \data\db这两个文件夹要自己新建</h2><p>mongod –dbpath E:\MongoDB\data\db</p>
+<p><a href="http://localhost:27017" target="_blank" rel="noopener">http://localhost:27017</a> 完了试试可不可以访问</p>
+<h2 id="2-本地windows-mongodb-服务配置"><a href="#2-本地windows-mongodb-服务配置" class="headerlink" title="2.本地windows mongodb 服务配置"></a>2.本地windows mongodb 服务配置</h2><p>###2.1 先在data文件下创建一个新文件夹log，然后Mongodb新建配置文件mongo.config</p>
+<p>dbpath=E:\MongoDB\data\db #数据库路径<br>logpath=E:\MongoDB\data\log\mongodb.log #日志输出文件路径<br>logappend=true #错误日志采用追加模式，配置这个选项后mongodb的日志会追加到现有的日志文件，而不是从新创建一个新文件<br>journal=true #启用日志文件，默认启用<br>quiet=true #这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false<br>port=27017 #端口号 默认为27017</p>
+<p>##2.2 用管理员身份打开cmd: 在环境的bin目录下运行<br>mongod.exe –logpath E:\MongoDB\logs\mongodb.log –logappend –dbpath E:\MongoDB\data –directoryperdb –serviceName MongoDB –install</p>
+<p>如果注册表因为之前没安装了没装成功的话，运行net start MongoDB 可以会报错， 可以先 运行 sc delete MongoDB 然后再执行2.2</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2018/07/05/mongodb配置/" data-id="cjj8mp08v0000jgv5eh7acj6g" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
+
+    <section id="comments">
     
-        </div>
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
     
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -257,6 +320,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/06/23/react相关/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">react</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -447,11 +523,13 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
+    var disqus_url = 'http://yoursite.com/2018/07/05/mongodb配置/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
