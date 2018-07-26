@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-07-25T01:09:41.774Z</updated>
+  <updated>2018-07-26T10:58:17.854Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>javascript中this理解</title>
+    <link href="http://yoursite.com/2018/07/26/javascript%E4%B8%ADthis%E7%90%86%E8%A7%A3/"/>
+    <id>http://yoursite.com/2018/07/26/javascript中this理解/</id>
+    <published>2018-07-26T09:30:27.651Z</published>
+    <updated>2018-07-26T10:58:17.854Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>js中this关键字的使用方法总结</code></pre><a id="more"></a><h2 id="开头先理解两句话"><a href="#开头先理解两句话" class="headerlink" title="开头先理解两句话"></a>开头先理解两句话</h2><pre><code>1. this设计的目的就是在函数体的内部,指代函数当前的运行环境2. Javascript 是一个文本作用域的语言, 就是说, 一个变量的作用域, 在写这个变量的时候确定. this 关键字是为了在 JS 中加入动态作用域而做的努力. 所谓动态作用域, 就是说变量的作用范围, 是根据函数调用的位置而定的. 从这个角度来理解 this, 就简单的多.this 是 JS 中的动态作用域机制, 具体来说有四种, 优先级有低到高分别如下:2.1. 默认的 this 绑定, 就是说 在一个函数中使用了 this, 但是没有为 this 绑定对象. 这种情况下, 非严格默认, this 就是全局变量 Node 环境中的 global, 浏览器环境中的 window.2.2. 隐式绑定: 使用 obj.foo() 这样的语法来调用函数的时候, 函数 foo 中的 this 绑定到 obj 对象2.3. 显示绑定: foo.call(obj, ...), foo.apply(obj,[...]), foo.bind(obj,...)2.4. 构造绑定: new foo() , 这种情况, 无论 foo 是否做了绑定, 都要创建一个新的对象, 然后 foo 中的 this 引用这个对象.</code></pre><p>##### </p><p>函数在定义的时候，解释器已经把当前的环境和函数一起打包保存起来了吧，所以才说函数有词法作用域啰。至于像 obj.foo() 这种对象调用函数的语法，无非就是 obj.foo(obj)的语法糖了吧, 如果是直接 foo() 这样函数调用，没有传this引用，函数体在执行时就只好从定义时打包的环境中找了，找不到就一层一层往上找，直到顶层发现this代表window对象，就用window啰。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;js中this关键字的使用方法总结
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="javascript知识点 //分类" scheme="http://yoursite.com/categories/javascript%E7%9F%A5%E8%AF%86%E7%82%B9-%E5%88%86%E7%B1%BB/"/>
+    
+    
+      <category term="javascript this" scheme="http://yoursite.com/tags/javascript-this/"/>
+    
+  </entry>
   
   <entry>
     <title>markdown语法</title>
